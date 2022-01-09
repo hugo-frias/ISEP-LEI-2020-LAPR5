@@ -1,0 +1,79 @@
+/*// POST successfull
+
+Request Body:
+
+{	
+    "code":"P03",
+    "totalDuration":"01:00",
+    "totalDistance":100,
+    "pathNodes": ["NS03","NS04"]
+}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Path is added", function() {
+    res.to.have.body('The path was successfully added!');
+});
+
+/ POST insuccessfull (trying to add the same path)
+
+{	
+    "code":"P03",
+    "totalDuration":"01:00",
+    "totalDistance":100,
+    "pathNodes": ["NS03","NS04"]
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Path not added because already exists", function() {
+    res.to.have.body('Error creating path!');
+});
+
+// POST insuccessfull (code is not in the body)
+
+Request Body:
+
+{	
+    "totalDuration":"01:00",
+    "totalDistance":100,
+    "pathNodes": ["NS03","NS04"]
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Code of path is not in the body ", function() {
+    res.to.have.body('"code" is required');
+});
+
+//POST insuccessfull (pathNodes not exist)
+
+{	
+    "code":"P04",
+    "totalDuration":"01:00",
+    "totalDistance":100,
+    "pathNodes": ["NS03","NS05"]
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Path not added because pathNodes not exist", function() {
+    res.to.have.body('Error creating path!');
+});
+*/

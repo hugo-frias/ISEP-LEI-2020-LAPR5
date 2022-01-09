@@ -1,0 +1,27 @@
+/*
+
+// GET successfull to all paths (more than 0 paths in database)
+
+const res = pm.response;
+
+pm.test("Status code is 200", function() {
+    res.to.have.status(200);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.jsonBody("[]");
+});
+
+// GET insuccessfull to all paths (0 paths in database)
+
+const res = pm.response;
+
+pm.test("Status code is 200", function() {
+    res.to.have.status(200);
+});
+
+pm.test("Non existing", function() {
+    res.to.have.body('[]');
+});
+
+*/

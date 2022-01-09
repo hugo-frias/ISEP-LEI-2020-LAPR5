@@ -1,0 +1,132 @@
+/*
+
+// GET successfull to all nodes by desc order
+
+Request Body:
+
+{ "filter": "all", "order": -1 }
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.jsonBody("[]");
+});
+
+// GET successfull to all nodes by asc order
+
+Request Body:
+
+{ "filter": "all", "order": 1 }
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.jsonBody("[]");
+});
+
+// GET successfull to node to equal shortName
+
+Request Body:
+
+{ "filter": "specific", "shortName": "ALT" }
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.jsonBody("[]");
+});
+
+// GET insuccessfull to node to equal non existing shortName
+
+Request Body:
+
+{ "filter": "specific", "shortName": "ALTAX" }
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Non existing", function() {
+    res.to.have.body('[]');
+});
+
+// GET insuccessfull to non existing depot nodes
+
+Request Body:
+
+{ "filter": "Depot", "depot": true }
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Non existing", function() {
+    res.to.have.body('[]');
+});
+
+// GET successfull to have depot nodes
+
+Request Body:
+
+{ "filter": "Depot", "depot": true }
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.jsonBody("[]");
+});
+
+
+// GET successfull to have non depot nodes
+
+Request Body:
+
+{ "filter": "Depot", "depot": false }
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.jsonBody("[]");
+});
+
+// GET insuccessfull to only have depot nodes
+
+Request Body:
+
+{ "filter": "Depot", "depot": false }
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Non existing", function() {
+    res.to.have.body('[]');
+});
+
+*/

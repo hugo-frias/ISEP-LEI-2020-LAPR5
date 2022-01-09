@@ -1,0 +1,23 @@
+Quem é o Responsável pelo tratamento dos seus dados?
+
+Identidade: Team Okapi
+Morada: R. Dr. António Bernardino de Almeida 431, 4200-072 Porto
+Telefone: 22 834 0500
+Correio eletrónico: : teamokapi@exemplo.com
+Contacto Delegado de Proteção de dados: teamokapi@exemplo.com
+----------------------------------------------
+Qual é a finalidade destes dados? 
+Estes dados são recolhidos:
+
+- Para permitir a utilização dos nossos serviços.
+- Para proporcionar e melhorar a sua experiência com os nossos serviços.
+- Para a investigação e o desenvolvimento de novos serviços e funcionalidades.
+- Para lhe enviar comunicações relevantes e personalizadas.
+- Para verificar a sua identidade e com isso prevenir, detetar e combater possiveis fraudes.
+
+----------------------------------------------
+Que informações são recolhidas?
+
+Os dados recolhidos são:
+- O email do usuário
+- A password do usuário

@@ -1,0 +1,116 @@
+/*// POST successfull
+
+
+Request Body:
+
+{"code": "CODIGO10",
+     "name": "arouca", 
+     "color": "RGB(0,0,0)",
+    "paths": ["ASDASD>ASDASD", "ASDASD>ASDASD"], 
+    "allowedVehicles": ["12345678912345678900"], 
+    "allowedDrivers": ["D01"]}
+
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Line is added", function() {
+    res.to.have.body('The line was successfully added!');
+});
+
+
+// POST not successfull - path doesnt exist
+
+
+Request Body:
+
+{"code": "CODIGO10",
+     "name": "arouca", 
+     "color": "RGB(0,0,0)",
+    "paths": ["1", "2"], 
+    "allowedVehicles": ["12345678912345678900"], 
+    "allowedDrivers": ["D01"]}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(401);
+});
+
+pm.test("Line is not added", function() {
+    res.to.have.body('Error creating the line');
+});
+
+// POST not successfull - code repeated
+
+
+Request Body:
+
+{"code": "CODIGO1",
+     "name": "arouca", 
+     "color": "RGB(0,0,0)",
+    "paths": ["ASDASD>ASDASD", "ASDASD>ASDASD"], 
+    "allowedVehicles": ["12345678912345678900"], 
+    "allowedDrivers": ["D01"]}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(401);
+});
+
+pm.test("Line is not added", function() {
+    res.to.have.body('Error creating the line');
+});
+
+// POST not successfull - allowed vehicle doesnt exist
+
+
+Request Body:
+
+{"code": "CODIGO1",
+     "name": "arouca", 
+     "color": "RGB(0,0,0)",
+    "paths": ["ASDASD>ASDASD", "ASDASD>ASDASD"], 
+    "allowedVehicles": ["asdasdasd"], 
+    "allowedDrivers": ["D01"]}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(401);
+});
+
+pm.test("Line is not added", function() {
+    res.to.have.body('Error creating the line');
+});
+
+// POST not successfull - allowed driver doesnt exist
+
+
+Request Body:
+
+{"code": "CODIGO1",
+     "name": "arouca", 
+     "color": "RGB(0,0,0)",
+    "paths": ["ASDASD>ASDASD", "ASDASD>ASDASD"], 
+    "allowedVehicles": ["12345678912345678900"], 
+    "allowedDrivers": ["asdasd"]}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(401);
+});
+
+pm.test("Line is not added", function() {
+    res.to.have.body('Error creating the line');
+});
+*/

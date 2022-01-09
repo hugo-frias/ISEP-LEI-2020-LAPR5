@@ -1,0 +1,173 @@
+/*// POST successfull
+
+Request Body:
+
+{
+	"code":"NS03",
+	"duration":"00:30",
+	"distance":1111,
+	"startNode":"SJM",
+	"endNode":"SMF"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Network Segment is added", function() {
+    res.to.have.body('The network segment was successfully added!');
+});
+
+/ POST insuccessfull (trying to add the same pathNode)
+
+Request Body:
+
+{
+   "code":"NS03",
+	"duration":"00:30",
+	"distance":1111,
+	"startNode":"SJM",
+	"endNode":"SMF"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Network Segment is not added because he already exists", function() {
+    res.to.have.body('Error creating the network segment!');
+});
+
+// POST insuccessfull (code is not in the body)
+
+Request Body:
+
+{
+   "duration":"00:30",
+	"distance":1111,
+	"startNode":"SJM",
+	"endNode":"SMF"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Code of pathNode is not in the body ", function() {
+    res.to.have.body('"code" is required');
+});
+
+// POST insuccessfull (duration is not in the body)
+
+Request Body:
+
+{
+   "code":"NS03",
+	
+	"distance":1111,
+	"startNode":"SJM",
+	"endNode":"SMF"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Duration of network segment is not in the body ", function() {
+    res.to.have.body('"duration" is required');
+});
+
+// POST insuccessfull (distance is not in the body)
+
+Request Body:
+
+{
+   "code":"NS03",
+	"duration":"00:30",
+	"startNode":"SJM",
+	"endNode":"SMF"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Distance of network segment is not in the body ", function() {
+    res.to.have.body('"distance" is required');
+});
+
+// POST insuccessfull (startNode is not in the body)
+
+Request Body:
+
+{
+   "code":"NS03",
+	"duration":"00:30",
+	"distance":1111,
+	"endNode":"SMF"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Startnode of network segment is not in the body ", function() {
+    res.to.have.body('"startNode" is required');
+});
+
+// POST insuccessfull (startNode is not in the body)
+
+Request Body:
+
+{
+   "code":"NS03",
+	"duration":"00:30",
+	"distance":1111,
+	"startNode":"SJM"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Endnode of network segment is not in the body ", function() {
+    res.to.have.body('"endNode" is required');
+});
+
+// POST insuccessfull (nodes not exist)
+
+Request Body:
+
+{
+   "code":"NS03",
+	"duration":"00:30",
+	"distance":1111,
+	"startNode":"SJM"
+    "endNode":"SSS"
+}
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Node/nodes not exists", function() {
+    res.to.have.body('Error creating the network segment!');
+});
+
+*/

@@ -1,0 +1,159 @@
+/*// POST successful
+
+
+Request Body:
+
+DriverType: {
+    code: "DT01",
+    description: "One driver type"
+}
+
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Driver type is added", function() {
+    res.to.have.body('The driver type was successfully added!');
+});
+
+// POST unsuccessful (trying to add the same driver type)
+
+
+Request Body:
+
+DriverType: {
+    code: "DT01",
+    description: "One driver type"
+}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Driver type is not added because he already exists", function() {
+    res.to.have.body('The driver type already exists!');
+});
+
+// POST unsuccessful (code of driver type is number)
+
+
+Request Body:
+
+DriverType: {
+    code: 10,
+    description: "One driver type"
+}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Code of driver type is number", function() {
+    res.to.have.body('"code" must be a string');
+});
+
+// POST unsuccessfull (description of driver type is number)
+
+
+Request Body:
+
+DriverType: {
+    code: "DT01",
+    description: 10
+}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Description of driver type is number", function() {
+    res.to.have.body('"description" must be a string');
+});
+
+// POST unsuccessful (length of driver type's code is wrong)
+
+
+Request Body:
+
+DriverType: {
+    code: "2222222222222222222222222222222222",
+    description: 10
+}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Length of driver type's code is bigger than 20 characters ", function() {
+    res.to.have.body('"code" length must be less than or equal to 20 characters long');
+});
+
+// POST unsuccessful (length of driver type's description is wrong)
+
+
+Request Body:
+
+DriverType: {code : "DT01" , description : "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Length of driver type's description is bigger than 250 characters ", function() {
+    res.to.have.body('"description" length must be less than or equal to 250 characters long');
+});
+
+// POST unsuccessful (description is not in the body)
+
+
+Request Body:
+
+DriverType: {code : "DT01"}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Description of driver type is not in the body ", function() {
+    res.to.have.body('"description" is required');
+});
+
+// POST unsuccessful (code is not in the body)
+
+
+Request Body:
+
+DriverType: {description : "One driver type"}
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Code of driver type is not in the body ", function() {
+    res.to.have.body('"code" is required');
+});
+*/

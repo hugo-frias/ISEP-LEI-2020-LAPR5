@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://okapi-spa-isep.herokuapp.com/",
+    "env": {
+        "dataAdminUser": "dataadm@gmail.com",
+        "dataAdminPassword": "12345"
+      }
+}

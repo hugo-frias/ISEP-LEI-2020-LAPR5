@@ -1,0 +1,60 @@
+#  Template NodeJS build
+
+#  This template allows you to validate your NodeJS code.
+#  The workflow allows running tests and code linting on the default branch.
+
+image: node:10.15.3
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Build and Test MDR
+            caches:
+              - node
+            script:
+              - cd MDR
+              - npm install
+              - npm test
+        - step:
+            name: Deploy to mdr
+            deployment: MDR
+            script:
+              - cd MDR
+              - npm pack
+              - pipe: atlassian/heroku-deploy:1.2.1
+                variables:
+                    HEROKU_API_KEY: '9b8ee66f-cd2f-4beb-873d-bd5e30b53b9b'
+                    HEROKU_APP_NAME: 'okapi-project-isep'
+                    ZIP_FILE: 'myexpressapp-1.0.0.tgz'
+    - parallel:                  
+        - step:
+            name: Build and Test SPA
+            caches:
+              - node
+            script:
+              - cd SPA
+              - npm install
+              - cd src
+              - npm test
+        - step:
+            name: Deploy to spa
+            deployment: SPA
+            script:
+              - cd SPA
+              - npm pack
+              - pipe: atlassian/heroku-deploy:1.2.1
+                variables:
+                    HEROKU_API_KEY: 'bfa7a41a-9222-450b-b1ed-cdb6fdf9af61'
+                    HEROKU_APP_NAME: 'okapi-spa-isep'
+                    ZIP_FILE: 'spa-0.1.0.tgz'
+    - parallel:                  
+        - step:
+            name: Deploy to mdv
+            deployment: MDV
+            script:
+              - pipe: atlassian/ssh-run:0.2.2
+                variables:
+                  SSH_USER: 'okapiLapr'
+                  SERVER: '13.66.35.100'
+                  COMMAND: './deployMDV.sh'

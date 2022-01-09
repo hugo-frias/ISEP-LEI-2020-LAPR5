@@ -1,0 +1,173 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+body{
+  margin: 0;
+  padding-bottom: 200%;
+}
+
+.TextForm {
+  height: 100%;
+  width: 50%;
+}
+
+.Sidebar{
+  height: 100%;
+  width: 200px;
+  background-color: grey;
+  opacity: 100%;
+}
+
+.NodeInputSpace {
+  right: 3%;
+}
+
+.Tab {
+  position: relative;
+  top: 55px;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+
+.Cenas{
+  height: 100%;
+  width: 300px;
+  background-color: #ff0000;
+  opacity: 100%;
+}
+.margem{
+  position: relative;
+  margin:80px;
+  left:30px;
+}
+
+.miniMargem{
+  margin:1%;
+}
+
+.miniMargem2{
+  position: relative;
+  margin:1%;
+  left: 43px;
+}
+.miniMargem3{
+  margin:2%;
+}
+.circleColour{
+  position: relative;
+  right:15px;
+  bottom: 10px;
+  margin:10px;
+}
+.inputMargem{
+  right:30px;
+}
+
+.createButton{
+  position: relative;
+  top: 20px;
+  right:30px;
+}
+
+.alertBox{
+  position: relative;
+  bottom: 150px;
+  right: 300px;
+  margin: 200px;
+}
+
+
+
+.Tab {
+  position: relative;
+  top: 55px;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+
+.Tab2{
+  position: relative;
+  top: 100px;
+  padding: 0;
+  bottom: 0;
+  right: 150px;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.Tab3 {
+  position: relative;
+  top: 145px;
+  padding: 0;
+  bottom: 0;
+  right: 240px;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+
+.Tab4 {
+  position: relative;
+  top: 100px;
+  padding: 0;
+  bottom: 0;
+  right: 100px;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+
+.Tab5 {
+  position: relative;
+  top: 100px;
+  padding: 0;
+  bottom: 0;
+  right: 130px;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.Tab6 {
+  position: relative;
+  top: 145px;
+  padding: 0;
+  bottom: 0;
+  right: 215px;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+.Tab4Aux {
+  position: relative;
+  top: 145px;
+  padding: 0;
+  bottom: 0;
+  right: 0;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+.Tab5Aux {
+  position: relative;
+  top: 190px;
+  padding: 0;
+  bottom: 0;
+  right: 175px;
+  flex-wrap: wrap;
+  align-content: center;
+  border: 3px solid white;
+}
+

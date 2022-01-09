@@ -1,0 +1,156 @@
+
+
+/*
+//GET successfull to all lines 
+
+
+Request Body:
+
+{ "filter": "NOFILTER"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.body("[]");
+});
+//GET successfull on name asc
+
+
+Request Body:
+
+{ "filter": "NAMEASC"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.body("[]");
+});
+
+//GET successfull on name desc
+
+
+Request Body:
+
+{ "filter": "NAMEDESC"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.body("[]");
+});
+
+//GET successfull on name desc
+
+
+Request Body:
+
+{ "filter": "NAMEDESC"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.body("[]");
+});
+
+//GET successfull to all lines by asc code order
+
+
+Request Body:
+
+{ "filter": "CODEASC"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.body("[]");
+});
+
+//GET successfull to all lines by desc code order
+
+
+Request Body:
+
+{ "filter": "CODEDESC"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.not.have.body("[]");
+});
+
+//GET unsuccessfull to specific unexistent code
+
+
+Request Body:
+
+{ "filter": "CODE-testnonexisting"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.have.body("[]");
+}); 
+
+//GET unsuccessfull to specific unexistent name
+
+
+Request Body:
+
+{ "filter": "NAME-testnonexisting"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.have.body("[]");
+}); 
+
+//GET unsuccessfull to specific unexistent name (with the has filter)
+
+
+Request Body:
+
+{ "filter": "HAS-testnon"}
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Working", function() {
+     pm.response.to.have.body("[]");
+}); 
+
+*/

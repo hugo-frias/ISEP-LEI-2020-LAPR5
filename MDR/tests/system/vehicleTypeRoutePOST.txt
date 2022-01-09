@@ -1,0 +1,357 @@
+/*// POST successful
+
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 201", function() {
+    res.to.have.status(201);
+});
+
+pm.test("Vehicle type is added", function() {
+    res.to.have.body('The vehicle type was successfully added!');
+});
+
+
+// POST unsuccessful (trying to add the same driver type)
+
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Vehicle type is not added because he already exists", function() {
+    res.to.have.body('The vehicle type already exists!');
+});
+
+// POST unsuccessful (code of driver type is number)
+
+
+Request Body:
+
+VehicleType: {
+        "code": 12345678912345678960,
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Code of vehicle type is number", function() {
+    res.to.have.body('"code" must be a string');
+});
+
+
+// POST unsuccessful (name of vehicle type is number)
+
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": 10,
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Name of vehicle type is number", function() {
+    res.to.have.body('"name" must be a string');
+});
+
+// POST unsuccessful (length of vehicle type's code is wrong)
+
+
+Request Body:
+
+VehicleType: {
+        "code": "12345672260",
+        "name": "10",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Length of vehicle type's code is less than 20 characters ", function() {
+    res.to.have.body('"code" length must be at least 20 characters long');
+});
+
+
+
+//POST unsuccessful (code is not in the body)
+
+Request Body:
+
+VehicleType: {
+        
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Code of vehicle type is not in the body ", function() {
+    res.to.have.body('"code" is required');
+});
+
+
+
+//POST unsuccessful (name is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Name of vehicle type is not in the body ", function() {
+    res.to.have.body('"name" is required');
+});
+
+
+//POST unsuccessful (autonomy is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Autonomy of vehicle type is not in the body ", function() {
+    res.to.have.body('"autonomy" is required');
+});
+
+
+
+//POST unsuccessful (cost is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Cost of vehicle type is not in the body ", function() {
+    res.to.have.body('"cost" is required');
+});
+
+
+
+//POST unsuccessful (avgSpeed is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        
+        "energy": 10,
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Average Speed of vehicle type is not in the body ", function() {
+    res.to.have.body('"avgSpeed" is required');
+});
+
+
+
+//POST unsuccessful (energy is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        
+        "consumption": 10,
+        "emission": 10
+    }
+
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Energy of vehicle type is not in the body ", function() {
+    res.to.have.body('"energy" is required');
+});
+
+
+
+//POST unsuccessful (consumption is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+       
+        "emission": 10
+    }
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Consumption of vehicle type is not in the body ", function() {
+    res.to.have.body('"consumption" is required');
+});
+
+
+//POST unsuccessful (emission is not in the body)
+
+Request Body:
+
+VehicleType: {
+        "code": "12345678912345678960",
+        "name": "fjdhd",
+        "autonomy": 10,
+        "cost": 10,
+        "avgSpeed": 10,
+        "energy": 10,
+        "consumption": 10
+    }
+
+const res = pm.response;
+
+pm.test("Status code is 400", function() {
+    res.to.have.status(400);
+});
+
+pm.test("Emission of vehicle type is not in the body ", function() {
+    res.to.have.body('"emission" is required');
+});*/
